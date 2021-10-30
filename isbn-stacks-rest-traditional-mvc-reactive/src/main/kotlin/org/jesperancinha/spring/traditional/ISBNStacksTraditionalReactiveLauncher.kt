@@ -1,4 +1,4 @@
-package org.jesperancinha.spring
+package org.jesperancinha.spring.traditional
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

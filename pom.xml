@@ -28,6 +28,7 @@
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <kotest.version>5.0.0.M3</kotest.version>
         <junit-jupiter-engine.version>5.8.1</junit-jupiter-engine.version>
+        <spring-fu-kofu.version>0.4.3</spring-fu-kofu.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -35,11 +36,21 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.jesperancinha.spring</groupId>
+                <artifactId>isbn-stacks-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.fu</groupId>
+                <artifactId>spring-fu-kofu</artifactId>
+                <version>${spring-fu-kofu.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -166,4 +177,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+
 </project>
