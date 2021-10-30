@@ -10,6 +10,7 @@
     <modules>
         <module>isbn-stacks-rest-traditional-mvc-reactive</module>
         <module>isbn-stacks-rest-kofu-mvc-reactive</module>
+        <module>isbn-stacks-common</module>
     </modules>
 
     <name>ISBN Stacks - Parent file</name>
@@ -24,23 +25,45 @@
         <kotlin.version>1.6.0-M1</kotlin.version>
         <spring-boot.version>2.5.6</spring-boot.version>
         <kotlin.code.style>official</kotlin.code.style>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <kotest.version>5.0.0.M3</kotest.version>
+        <junit-jupiter-engine.version>5.8.1</junit-jupiter-engine.version>
     </properties>
 
     <packaging>pom</packaging>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-parent</artifactId>
             <version>${spring-boot.version}</version>
             <type>pom</type>
         </dependency>
-
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-common</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-runner-junit5-jvm</artifactId>
+            <version>${kotest.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.kotest</groupId>
+            <artifactId>kotest-assertions-core-jvm</artifactId>
+            <version>${kotest.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
-        <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -96,11 +119,6 @@
                         <goals>
                             <goal>test-compile</goal>
                         </goals>
-                        <configuration>
-                            <sourceDirs>
-                                <source>${project.basedir}/src/test/kotlin</source>
-                            </sourceDirs>
-                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
@@ -109,7 +127,6 @@
                         <plugin>jpa</plugin>
                         <plugin>spring</plugin>
                     </compilerPlugins>
-
                     <pluginOptions>
                         <option>no-arg:invokeInitializers=true</option>
                     </pluginOptions>
@@ -126,6 +143,11 @@
                         <version>${kotlin.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
