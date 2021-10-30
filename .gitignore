@@ -29,3 +29,6 @@ target
 bin
 build
 dist
+
+# MAC-OS
+.DS_Store
