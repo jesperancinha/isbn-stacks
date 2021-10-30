@@ -28,13 +28,33 @@
 
 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧 Under construction</i> 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 
-Worldwide, the ISBN number is used. It is a massive collection of numbers which uniquely identify books per type and edition. Based on that, this project is here to evaluate the recent experimental project from the spring team called Spring-FU. As DSL that, when released, it will allow Spring applications to be developed without the use of annotations. The main argument is that annotations bring unnecessary overhead to the application and that processing time can be avoided.
+Worldwide, the number ISBN 13 is used. It is a massive collection of numbers which uniquely identify books per type and edition. Based on that, this project is here to evaluate the recent experimental project from the spring team called Spring-FU. As DSL that, when released, it will allow Spring applications to be developed without the use of annotations. The main argument is that annotations bring unnecessary overhead to the application and that processing time can be avoided.
+
+## Sequence diagram
+
+To visualize this diagram you may need the [mermaid-diagrams](https://chrome.google.com/webstore/detail/mermaid-diagrams/phfcghedmopjadpojhmmaffjmfiakfil) plugin installation.
+
+To visualize it in Intellij, please install the [mermaid plugin](https://mermaid-js.github.io/mermaid/#/).
+
+```mermaid
+    sequenceDiagram
+        participant Locust
+        participant ISBN Reactive Traditional REST
+        participant ISBN Reactice KoFu REST
+        
+        Locust-->>ISBN Reactive Traditional REST: Request ISBN numbers
+        Locust-->>ISBN Reactice KoFu REST: Request ISBN numbers
+        ISBN Reactive Traditional REST-->>Locust: Response with ISBN numbers
+        ISBN Reactice KoFu REST-->>Locust: Respond with ISBN numbers
+```
 
 ## References
 
--   [A Guide to Spring Framework Annotations](https://dzone.com/articles/a-guide-to-spring-framework-annotations)
--   [What is New in Spring Framework 4.x](https://www.dineshonjava.com/whats-new-in-spring-framework-4x/)
--   [Nicolas Fränkel-Annotation-free Spring](https://nfrankel.medium.com/annotation-free-spring-dcdbefd57fe8)
+- [A Guide to Spring Framework Annotations](https://dzone.com/articles/a-guide-to-spring-framework-annotations)
+- [What is New in Spring Framework 4.x](https://www.dineshonjava.com/whats-new-in-spring-framework-4x/)
+- [Nicolas Fränkel-Annotation-free Spring](https://nfrankel.medium.com/annotation-free-spring-dcdbefd57fe8)
+- [Spring-Fu GitHub Repo](https://github.com/spring-projects-experimental/spring-fu)
+- [Spring KoFu](https://github.com/spring-projects-experimental/spring-fu/tree/main/kofu)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
