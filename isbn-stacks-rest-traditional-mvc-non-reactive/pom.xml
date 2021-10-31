@@ -8,11 +8,10 @@
         <groupId>org.jesperancinha.spring</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>isbn-stacks-rest-traditional-mvc-reactive</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>isbn-stacks-rest-traditional-mvc-non-reactive</artifactId>
     <packaging>jar</packaging>
 
-    <name>ISBN Stacks - Spring WebFlux reactive application</name>
+    <name>ISBN Stacks - Spring Web application</name>
 
     <dependencies>
         <dependency>
@@ -26,11 +25,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
@@ -39,23 +33,14 @@
             <artifactId>kotlin-stdlib</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.kotest</groupId>
-            <artifactId>kotest-runner-junit5-jvm</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test-junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.kotest</groupId>
-            <artifactId>kotest-assertions-core-jvm</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -70,7 +55,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>org.jesperancinha.spring.traditional.ISBNStacksTraditionalReactiveLauncher</mainClass>
+                    <mainClass>org.jesperancinha.spring.traditional.ISBNStacksTraditionalNonReactiveLauncher</mainClass>
                 </configuration>
                 <executions>
                     <execution>

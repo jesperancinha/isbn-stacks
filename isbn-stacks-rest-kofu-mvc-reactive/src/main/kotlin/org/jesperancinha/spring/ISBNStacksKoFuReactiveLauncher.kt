@@ -38,9 +38,13 @@ class ISBNSampleHandler(private val isbnSampleService: ISBNSampleService) {
     fun isbns(request: ServerRequest) = ServerResponse.ok().bodyValue(ISBNS)
 }
 
-
-fun main(args: Array<String>) {
-    app.run()
+class ISBNStacksKoFuReactiveLauncher{
+    companion object{
+        @JvmStatic
+        fun main(args: Array<String>) {
+            app.run()
+        }
+    }
 }
 
 

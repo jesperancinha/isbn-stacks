@@ -1,0 +1,3 @@
+package org.jesperancinha.spring.traditional
+
+internal class ISBNStacksTraditionalNonReactiveLauncherTest

@@ -11,6 +11,7 @@
         <module>isbn-stacks-rest-traditional-mvc-reactive</module>
         <module>isbn-stacks-rest-kofu-mvc-reactive</module>
         <module>isbn-stacks-common</module>
+        <module>isbn-stacks-rest-traditional-mvc-non-reactive</module>
     </modules>
 
     <name>ISBN Stacks - Parent file</name>
@@ -29,6 +30,7 @@
         <kotest.version>5.0.0.M3</kotest.version>
         <junit-jupiter-engine.version>5.8.1</junit-jupiter-engine.version>
         <spring-fu-kofu.version>0.4.3</spring-fu-kofu.version>
+        <spring.version>5.3.12</spring.version>
     </properties>
 
     <packaging>pom</packaging>
@@ -39,18 +41,6 @@
                 <groupId>org.jesperancinha.spring</groupId>
                 <artifactId>isbn-stacks-common</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.fu</groupId>
-                <artifactId>spring-fu-kofu</artifactId>
-                <version>${spring-fu-kofu.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -91,11 +81,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -177,13 +162,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <name>Spring Milestone Repository</name>
-            <url>https://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
-
 </project>
