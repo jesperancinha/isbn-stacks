@@ -61,6 +61,11 @@ locust-all-start:
 	docker restart jofisaes_isbn_stacks_mvc
 	docker restart jofisaes_isbn_stacks_kofu
 	cd locust/all && locust --host=localhost
+locust-small-start:
+	docker restart jofisaes_isbn_stacks_reactive
+	docker restart jofisaes_isbn_stacks_mvc
+	docker restart jofisaes_isbn_stacks_kofu
+	cd locust/small && locust --host=localhost
 locust-web-start-ramp:
 	docker stop jofisaes_isbn_stacks_reactive
 	docker stop jofisaes_isbn_stacks_kofu
@@ -97,3 +102,19 @@ locust-kofu-start-big-ramp:
 	docker restart jofisaes_isbn_stacks_kofu
 	sleep 5
 	cd locust/kofu && locust --host=localhost --headless -u 1000 -r 1 --run-time 15m --csv kofu
+locust-small-sequence-start:
+	docker stop jofisaes_isbn_stacks_reactive
+	docker stop jofisaes_isbn_stacks_mvc
+	docker restart jofisaes_isbn_stacks_kofu
+	sleep 5
+	cd locust/small/kofu && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv kofu
+	docker stop jofisaes_isbn_stacks_reactive
+	docker restart jofisaes_isbn_stacks_mvc
+	docker stop jofisaes_isbn_stacks_kofu
+	sleep 5
+	cd locust/small/web && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv web
+	docker restart jofisaes_isbn_stacks_reactive
+	docker stop jofisaes_isbn_stacks_mvc
+	docker stop jofisaes_isbn_stacks_kofu
+	sleep 5
+	cd locust/small/webflux && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv webflux

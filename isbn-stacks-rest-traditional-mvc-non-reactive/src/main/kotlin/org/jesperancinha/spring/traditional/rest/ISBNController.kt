@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ObjectNode
 import org.jesperancinha.spring.IsbnDto
 import org.jesperancinha.spring.IsbnDto.Companion.ISBNS
+import org.jesperancinha.spring.IsbnDto.Companion.SMALL_ISBNS
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -30,6 +31,11 @@ class ISBNController {
     @GetMapping("isbns")
     fun getIsbns(): List<IsbnDto> {
         return ISBNS
+    }
+
+    @GetMapping("small/isbns")
+    fun getSmallIsbns(): List<IsbnDto> {
+        return SMALL_ISBNS
     }
 
     companion object {

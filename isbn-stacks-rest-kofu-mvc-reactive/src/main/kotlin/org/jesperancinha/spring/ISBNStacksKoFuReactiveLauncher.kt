@@ -1,6 +1,7 @@
 package org.jesperancinha.spring
 
 import org.jesperancinha.spring.IsbnDto.Companion.ISBNS
+import org.jesperancinha.spring.IsbnDto.Companion.SMALL_ISBNS
 import org.springframework.fu.kofu.reactiveWebApplication
 import org.springframework.fu.kofu.webflux.webFlux
 import org.springframework.web.reactive.function.server.ServerRequest
@@ -18,6 +19,7 @@ val app = reactiveWebApplication {
             GET("/api/kofu/hello", handler::hello)
             GET("/api/kofu", handler::json)
             GET("/api/kofu/isbns", handler::isbns)
+            GET("/api/kofu/small/isbns", handler::smallIsbns)
         }
         codecs {
             string()
@@ -36,6 +38,7 @@ class ISBNSampleHandler(private val isbnSampleService: ISBNSampleService) {
     fun hello(request: ServerRequest) = ServerResponse.ok().bodyValue(isbnSampleService.generateMessage())
     fun json(request: ServerRequest) = ServerResponse.ok().bodyValue(ISBNMessage(isbnSampleService.generateMessage()))
     fun isbns(request: ServerRequest) = ServerResponse.ok().bodyValue(ISBNS)
+    fun smallIsbns(request: ServerRequest) = ServerResponse.ok().bodyValue(SMALL_ISBNS)
 }
 
 class ISBNStacksKoFuReactiveLauncher{
