@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences
+GET,/api/kofu/isbns,Remote end closed connection without response,11
