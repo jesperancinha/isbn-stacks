@@ -9,6 +9,9 @@ test-maven:
 	mvn test
 local: no-test
 	mkdir -p bin
+	cp isbn-stacks-rest-kofu-mvc-reactive/target/isbn-stacks-rest-kofu-mvc-reactive-*.jar bin/isbn-stacks-rest-kofu-mvc-reactive.jar
+	cp isbn-stacks-rest-traditional-mvc-non-reactive/target/isbn-stacks-rest-traditional-mvc-non-reactive-*.jar bin/isbn-stacks-rest-traditional-mvc-non-reactive.jar
+	cp isbn-stacks-rest-traditional-mvc-reactive/target/isbn-stacks-rest-traditional-mvc-reactive-*.jar bin/isbn-stacks-rest-traditional-mvc-reactive.jar
 no-test:
 	mvn clean install -DskipTests
 docker:
