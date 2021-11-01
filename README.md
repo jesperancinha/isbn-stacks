@@ -54,6 +54,7 @@ To visualize it in Intellij, please install the [mermaid plugin](https://mermaid
 
 ## References
 
+- [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor)
 - [Spring Framework 5.0 Released](https://www.infoq.com/news/2017/10/spring-5-released/)
 - [JAX Innovation Award Winners](https://blogs.eclipse.org/post/ian-skerrett/jax-innovation-award-winners)
 - [Agitar Wins 2006 Software Development Magazine Productivity Award](http://www.agitar.com/news/pr/20060322.html)
