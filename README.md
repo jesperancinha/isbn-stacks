@@ -54,11 +54,19 @@ To visualize it in Intellij, please install the [mermaid plugin](https://mermaid
 
 ## References
 
--   [A Guide to Spring Framework Annotations](https://dzone.com/articles/a-guide-to-spring-framework-annotations)
--   [What is New in Spring Framework 4.x](https://www.dineshonjava.com/whats-new-in-spring-framework-4x/)
--   [Nicolas Fränkel-Annotation-free Spring](https://nfrankel.medium.com/annotation-free-spring-dcdbefd57fe8)
--   [Spring-Fu GitHub Repo](https://github.com/spring-projects-experimental/spring-fu)
--   [Spring KoFu](https://github.com/spring-projects-experimental/spring-fu/tree/main/kofu)
+- [Spring Framework 5.0 Released](https://www.infoq.com/news/2017/10/spring-5-released/)
+- [JAX Innovation Award Winners](https://blogs.eclipse.org/post/ian-skerrett/jax-innovation-award-winners)
+- [Agitar Wins 2006 Software Development Magazine Productivity Award](http://www.agitar.com/news/pr/20060322.html)
+- [16th Jolt Awards 2006](http://blog.sina.com.tw/4907/article.php?pbgid=4907&entryid=12167)
+- [The 16th annual jolt product Excellence Award winners)](https://topic.alibabacloud.com/a/the-16th-annual-jolt-product-excellence-award-winners_8_8_32396776.html)
+- [JetBrains Products Win Jolt Productivity Awards](https://blog.jetbrains.com/idea/2006/03/jetbrains-products-win-jolt-productivity-awards/)
+- [Spring Framework](https://en.wikipedia.org/wiki/Spring_Framework)
+- [java spring - natashasweety7/Software Wiki](https://github-wiki-see.page/m/natashasweety7/Software/wiki/java-spring)
+- [A Guide to Spring Framework Annotations](https://dzone.com/articles/a-guide-to-spring-framework-annotations)
+- [What is New in Spring Framework 4.x](https://www.dineshonjava.com/whats-new-in-spring-framework-4x/)
+- [Nicolas Fränkel-Annotation-free Spring](https://nfrankel.medium.com/annotation-free-spring-dcdbefd57fe8)
+- [Spring-Fu GitHub Repo](https://github.com/spring-projects-experimental/spring-fu)
+- [Spring KoFu](https://github.com/spring-projects-experimental/spring-fu/tree/main/kofu)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
