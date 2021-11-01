@@ -40,11 +40,14 @@ To visualize it in Intellij, please install the [mermaid plugin](https://mermaid
 ```mermaid
     sequenceDiagram
         participant Locust
+        participant ISBN Non Reactice Traditional REST
         participant ISBN Reactive Traditional REST
         participant ISBN Reactice KoFu REST
         
+        Locust-->> ISBN Non Reactice Traditional REST: Request ISBN numbers
         Locust-->>ISBN Reactive Traditional REST: Request ISBN numbers
         Locust-->>ISBN Reactice KoFu REST: Request ISBN numbers
+        ISBN Non Reactice Traditional REST-->>Locust: Response with ISBN numbers
         ISBN Reactive Traditional REST-->>Locust: Response with ISBN numbers
         ISBN Reactice KoFu REST-->>Locust: Respond with ISBN numbers
 ```
