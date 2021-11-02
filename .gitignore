@@ -32,3 +32,6 @@ dist
 
 # MAC-OS
 .DS_Store
+
+# Python env
+__pycache__
