@@ -1,4 +1,4 @@
-# ISBN Stacks - Spring KoFu Reactive Application
+# Spring KoFu Reactive Plain Application
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
