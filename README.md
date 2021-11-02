@@ -5,6 +5,11 @@
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/isbn-stacks.svg)](#)
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
 
+[![CircleCI](https://circleci.com/gh/jesperancinha/isbn-stacks.svg?style=svg)](https://circleci.com/gh/jesperancinha/isbn-stacks)
+[![Build status](https://ci.appveyor.com/api/projects/status/m7x1k6x67masmn0u?svg=true)](https://ci.appveyor.com/project/jesperancinha/isbn-stacks)
+[![isbn-stacks](https://github.com/jesperancinha/isbn-stacks/actions/workflows/isbn-stacks.yml/badge.svg)](https://github.com/jesperancinha/isbn-stacks/actions/workflows/isbn-stacks.yml)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/527c3cb900ef4ca892c872d468b3dc75)](https://www.codacy.com/gh/jesperancinha/isbn-stacks/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/isbn-stacks&amp;utm_campaign=Badge_Grade)
 
 [![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/isbn-stacks.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/isbn-stacks.svg)](#)
