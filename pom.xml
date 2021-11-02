@@ -12,6 +12,7 @@
         <module>isbn-stacks-rest-kofu-mvc-reactive</module>
         <module>isbn-stacks-common</module>
         <module>isbn-stacks-rest-traditional-mvc-non-reactive</module>
+        <module>isbn-stacks-rest-kofu-plain</module>
     </modules>
 
     <name>ISBN Stacks - Parent file</name>

@@ -12,6 +12,7 @@ local: no-test
 	cp isbn-stacks-rest-kofu-mvc-reactive/target/isbn-stacks-rest-kofu-mvc-reactive-*.jar bin/isbn-stacks-rest-kofu-mvc-reactive.jar
 	cp isbn-stacks-rest-traditional-mvc-non-reactive/target/isbn-stacks-rest-traditional-mvc-non-reactive-*.jar bin/isbn-stacks-rest-traditional-mvc-non-reactive.jar
 	cp isbn-stacks-rest-traditional-mvc-reactive/target/isbn-stacks-rest-traditional-mvc-reactive-*.jar bin/isbn-stacks-rest-traditional-mvc-reactive.jar
+	cp isbn-stacks-rest-kofu-plain/target/isbn-stacks-rest-kofu-plain-*.jar bin/isbn-stacks-rest-kofu-plain.jar
 no-test:
 	mvn clean install -DskipTests
 docker:
@@ -105,22 +106,22 @@ locust-kofu-start-big-ramp:
 	docker restart jofisaes_isbn_stacks_kofu
 	sleep 5
 	cd locust/kofu && locust --host=localhost --headless -u 1000 -r 1 --run-time 15m --csv kofu
-locust-small-sequence-start:
+locust-small-load-sequence-start:
 	docker stop jofisaes_isbn_stacks_reactive
 	docker stop jofisaes_isbn_stacks_mvc
 	docker restart jofisaes_isbn_stacks_kofu
 	sleep 5
-	cd locust/small/kofu && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv kofu
+	cd locust/small/kofu && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv kofu --exit-code-on-error 0
 	docker stop jofisaes_isbn_stacks_reactive
 	docker restart jofisaes_isbn_stacks_mvc
 	docker stop jofisaes_isbn_stacks_kofu
 	sleep 5
-	cd locust/small/web && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv web
+	cd locust/small/web && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv web --exit-code-on-error 0
 	docker restart jofisaes_isbn_stacks_reactive
 	docker stop jofisaes_isbn_stacks_mvc
 	docker stop jofisaes_isbn_stacks_kofu
 	sleep 5
-	cd locust/small/webflux && locust --host=localhost --headless -u 10000 -r 100 --run-time 1m --csv webflux
+	cd locust/small/webflux && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv webflux --exit-code-on-error 0
 locust-sequence-start:
 	docker stop jofisaes_isbn_stacks_reactive
 	docker stop jofisaes_isbn_stacks_mvc
