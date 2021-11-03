@@ -66,6 +66,12 @@ To visualize it in Intellij, please install the [mermaid plugin](https://mermaid
         ISBN Reactive Traditional REST-->>Locust: Response with ISBN numbers
         ISBN Reactice KoFu REST-->>Locust: Respond with ISBN numbers
 ```
+## Java Setup
+
+```shell
+sdk install java 17-open
+sdk use java 17-open
+```
 
 ## Buy me a coffee
 
