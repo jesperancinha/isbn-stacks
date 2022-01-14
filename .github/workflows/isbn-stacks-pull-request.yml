@@ -1,7 +1,7 @@
-name: isbn-stacks
+name: isbn-stacks-pull_request
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
