@@ -24,14 +24,14 @@
         <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
-        <kotlin.version>1.6.0-M1</kotlin.version>
+        <kotlin.version>1.6.10</kotlin.version>
         <spring-boot.version>2.5.6</spring-boot.version>
         <kotlin.code.style>official</kotlin.code.style>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <kotest.version>5.0.0.M3</kotest.version>
-        <junit-jupiter-engine.version>5.8.1</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
         <spring-fu-kofu.version>0.4.3</spring-fu-kofu.version>
-        <spring.version>5.3.12</spring.version>
+        <spring.version>5.3.15</spring.version>
         <omni-coveragereporter-maven-plugin.version>0.0.11</omni-coveragereporter-maven-plugin.version>
     </properties>
 
