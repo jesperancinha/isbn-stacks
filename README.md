@@ -14,6 +14,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/isbn-stacks/badge.svg)](https://snyk.io/test/github/jesperancinha/isbn-stacks)
 [![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/isbn-stacks?branch=main)](https://bettercodehub.com/)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/527c3cb900ef4ca892c872d468b3dc75)](https://www.codacy.com/gh/jesperancinha/isbn-stacks/dashboard?utm_source=github.com&utm_medium=referral&utm_content=jesperancinha/isbn-stacks&utm_campaign=Badge_Coverage)
 [![Coverage Status](https://coveralls.io/repos/github/jesperancinha/isbn-stacks/badge.svg?branch=main)](https://coveralls.io/github/jesperancinha/isbn-stacks?branch=main)
 [![codecov](https://codecov.io/gh/jesperancinha/isbn-stacks/branch/main/graph/badge.svg?token=GNRWoqE9VL)](https://codecov.io/gh/jesperancinha/isbn-stacks)
 
