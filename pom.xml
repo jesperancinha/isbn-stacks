@@ -28,7 +28,7 @@
         <spring-boot.version>2.6.2</spring-boot.version>
         <kotlin.code.style>official</kotlin.code.style>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <kotest.version>5.0.3</kotest.version>
+        <kotest.version>5.1.0</kotest.version>
         <junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
         <spring-fu-kofu.version>0.5.0</spring-fu-kofu.version>
         <spring.version>5.3.15</spring.version>
