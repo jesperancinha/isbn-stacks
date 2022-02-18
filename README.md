@@ -88,13 +88,6 @@ sdk install java 17-open
 sdk use java 17-open
 ```
 
-## Buy me a coffee
-
-I hope you enjoyed this repository. If you did, you can optionally please buy me a coffee, which supports me to constantly improve and make new free content regularly for everyone. Thank you so much!
-
-[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=jesperancinha&button_colour=046c46&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00 "title")](https://www.buymeacoffee.com/jesperancinha)
-
-
 ## References
 
 -   [The evolution of Spring Fu](https://spring.io/blog/2018/10/02/the-evolution-of-spring-fu)
@@ -114,6 +107,12 @@ I hope you enjoyed this repository. If you did, you can optionally please buy me
 -   [Nicolas Fränkel-Annotation-free Spring](https://nfrankel.medium.com/annotation-free-spring-dcdbefd57fe8)
 -   [Spring-Fu GitHub Repo](https://github.com/spring-projects-experimental/spring-fu)
 -   [Spring KoFu](https://github.com/spring-projects-experimental/spring-fu/tree/main/kofu)
+
+## Buy me a coffee
+
+I hope you enjoyed this repository. If you did, you can optionally please buy me a coffee, which supports me in constantly improve and make new free content regularly for everyone. Thank you so much!
+
+[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=jesperancinha&button_colour=046c46&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00 "title")](https://www.buymeacoffee.com/jesperancinha)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
