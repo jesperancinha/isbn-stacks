@@ -31,7 +31,7 @@
         <kotest.version>5.2.1</kotest.version>
         <junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
         <spring-fu-kofu.version>0.5.0</spring-fu-kofu.version>
-        <spring.version>5.3.16</spring.version>
+        <spring.version>5.3.17</spring.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
     </properties>
 
