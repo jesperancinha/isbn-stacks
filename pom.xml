@@ -30,7 +30,7 @@
         <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
         <kotest.version>5.2.2</kotest.version>
         <junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
-        <spring-fu-kofu.version>0.5.0</spring-fu-kofu.version>
+        <spring-fu-kofu.version>0.5.1</spring-fu-kofu.version>
         <spring.version>5.3.18</spring.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
     </properties>
