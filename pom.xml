@@ -25,7 +25,7 @@
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <kotlin.version>1.6.21</kotlin.version>
-        <spring-boot.version>2.6.7</spring-boot.version>
+        <spring-boot.version>2.7.0</spring-boot.version>
         <kotlin.code.style>official</kotlin.code.style>
         <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
         <kotest.version>5.3.0</kotest.version>
