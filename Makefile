@@ -1,8 +1,12 @@
+SHELL=/bin/bash
+
 b: build-maven
 build:
 	mvn clean install
 build-maven:
 	mvn clean install -Pdemo -DskipTests
+build-cypress:
+	cd e2e && make build
 test:
 	mvn test
 test-maven:
@@ -23,7 +27,8 @@ build-docker: stop no-test
 	docker-compose up -d --build --remove-orphans
 show:
 	docker ps -a  --format '{{.ID}} - {{.Names}} - {{.Status}}'
-docker-clean:
+docker-clean: stop
+	docker-compose down -v
 	docker-compose rm -svf
 docker-delete-idle:
 	docker ps --format '{{.ID}}' -q --filter="name=isbn_" | xargs docker rm
@@ -32,6 +37,9 @@ docker-delete: stop
 	docker ps -a --format '{{.ID}}' -q --filter="name=isbn_" | xargs docker rm
 docker-cleanup: docker-delete
 	docker images -q | xargs docker rmi
+docker-stop-all:
+	docker ps -a --format '{{.ID}}' | xargs -I {}  docker stop {}
+	docker network prune
 docker-delete-apps: stop
 docker-clean-build-start: docker-clean b docker
 docker-clean-start: docker-clean docker
@@ -43,98 +51,131 @@ prune-all: stop
 	docker system prune --all --volumes
 stop:
 	docker-compose down --remove-orphans
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_kofu" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_kofu" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_mvc" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn_stacks_mvc" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=isbn-stacks-reactive" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=isbn-stacks-reactive" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=isbn-stacks-kofu" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=isbn-stacks-kofu" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=isbn-stacks-mvc" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=isbn-stacks-mvc" | xargs -I {} docker rm {}
 locust-start:
 	cd locust && locust --host=localhost
 locust-web-start:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_mvc
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-mvc
 	cd locust/web && locust --host=localhost
 locust-webflux-start:
-	docker stop jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_reactive
+	docker stop isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-reactive
 	cd locust/webflux && locust --host=localhost
 locust-kofu-start:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	cd locust/kofu && locust --host=localhost
 locust-all-start:
-	docker restart jofisaes_isbn_stacks_reactive
-	docker restart jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker restart isbn-stacks-reactive
+	docker restart isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	cd locust/all && locust --host=localhost
 locust-small-start:
-	docker restart jofisaes_isbn_stacks_reactive
-	docker restart jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker restart isbn-stacks-reactive
+	docker restart isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	cd locust/small && locust --host=localhost
 locust-web-start-ramp:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_mvc
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-mvc
 	sleep 5
 	cd locust/web && locust --host=localhost --headless -u 30 -r 1 --run-time 3m --csv web
 locust-webflux-start-ramp:
-	docker stop jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_reactive
+	docker stop isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-reactive
 	sleep 5
 	cd locust/webflux && locust --host=localhost --headless -u 30 -r 1 --run-time 3m --csv webflux
 locust-kofu-start-ramp:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	sleep 5
 	cd locust/kofu && locust --host=localhost --headless -u 30 -r 1 --run-time 3m --csv kofu
 locust-web-start-big-ramp:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_mvc
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-mvc
 	sleep 5
 	cd locust/web && locust --host=localhost --headless -u 1000 -r 1 --run-time 15m --csv web
 locust-webflux-start-big-ramp:
-	docker stop jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
-	docker restart jofisaes_isbn_stacks_reactive
+	docker stop isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
+	docker restart isbn-stacks-reactive
 	sleep 5
 	cd locust/webflux && locust --host=localhost --headless -u 1000 -r 1 --run-time 15m --csv webflux
 locust-kofu-start-big-ramp:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	sleep 5
 	cd locust/kofu && locust --host=localhost --headless -u 1000 -r 1 --run-time 15m --csv kofu
 locust-small-load-sequence-start:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	sleep 5
 	cd locust/small/kofu && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv kofu --exit-code-on-error 0
-	docker stop jofisaes_isbn_stacks_reactive
-	docker restart jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker restart isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
 	sleep 5
 	cd locust/small/web && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv web --exit-code-on-error 0
-	docker restart jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
+	docker restart isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
 	sleep 5
 	cd locust/small/webflux && locust --host=localhost --headless -u 2000 -r 2000 --run-time 10m --csv webflux --exit-code-on-error 0
 locust-sequence-start:
-	docker stop jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker restart jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker restart isbn-stacks-kofu
 	sleep 5
 	cd locust/kofu && locust --host=localhost --headless -u 2000 -r 1 --run-time 5m --csv kofu --exit-code-on-error 0
-	docker stop jofisaes_isbn_stacks_reactive
-	docker restart jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
+	docker stop isbn-stacks-reactive
+	docker restart isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
 	sleep 5
 	cd locust/web && locust --host=localhost --headless -u 2000 -r 1 --run-time 5m --csv web --exit-code-on-error 0
-	docker restart jofisaes_isbn_stacks_reactive
-	docker stop jofisaes_isbn_stacks_mvc
-	docker stop jofisaes_isbn_stacks_kofu
+	docker restart isbn-stacks-reactive
+	docker stop isbn-stacks-mvc
+	docker stop isbn-stacks-kofu
 	sleep 5
 	cd locust/webflux && locust --host=localhost --headless -u 2000 -r 1 --run-time 5m --csv webflux --exit-code-on-error 0
+cypress-open-docker:
+	cd e2e && yarn && npm run cypress:open:docker
+cypress-open:
+	cd e2e && yarn && npm run cypress
+cypress-electron:
+	cd e2e && make cypress-electron
+cypress-chrome:
+	cd e2e && make cypress-chrome
+cypress-firefox:
+	cd e2e && make cypress-firefox
+cypress-edge:
+	cd e2e && make cypress-edge
+dcd: stop docker-clean
+	docker-compose down
+local-pipeline: dcd docker-clean build-maven build-cypress test-maven
+isbn-wait:
+	bash isbn_wait.sh
+dcup: dcd
+	docker-compose up -d
+dcup-action: dcup isbn-wait
+dcup-full-action: dcd docker-clean build-maven build-cypress dcup isbn-wait

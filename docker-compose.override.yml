@@ -1,0 +1,21 @@
+version: "3.7"
+
+networks:
+  isbn_stacks:
+    driver: bridge
+
+services:
+
+  isbn-stacks-kofu:
+    ports:
+      - "8080:8080"
+
+  isbn-stacks-reactive:
+    ports:
+      - "8081:8081"
+
+  isbn-stacks-mvc:
+    ports:
+      - "8082:8082"
+
+

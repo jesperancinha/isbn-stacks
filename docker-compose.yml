@@ -6,9 +6,9 @@ networks:
 
 services:
 
-  jofisaes_isbn_stacks_kofu:
-    hostname: jofisaes_isbn_stacks_kofu
-    container_name: jofisaes_isbn_stacks_kofu
+  isbn-stacks-kofu:
+    hostname: isbn-stacks-kofu
+    container_name: isbn-stacks-kofu
     build:
       context: isbn-stacks-rest-kofu-mvc-reactive/.
     ports:
@@ -17,9 +17,9 @@ services:
     networks:
       - isbn_stacks
 
-  jofisaes_isbn_stacks_reactive:
-    hostname: jofisaes_isbn_stacks_reactive
-    container_name: jofisaes_isbn_stacks_reactive
+  isbn-stacks-reactive:
+    hostname: isbn-stacks-reactive
+    container_name: isbn-stacks-reactive
     build:
       context: isbn-stacks-rest-traditional-mvc-reactive/.
     ports:
@@ -28,9 +28,9 @@ services:
     networks:
       - isbn_stacks
 
-  jofisaes_isbn_stacks_mvc:
-    hostname: jofisaes_isbn_stacks_mvc
-    container_name: jofisaes_isbn_stacks_mvc
+  isbn-stacks-mvc:
+    hostname: isbn-stacks-mvc
+    container_name: isbn-stacks-mvc
     build:
       context: isbn-stacks-rest-traditional-mvc-non-reactive/.
     ports:

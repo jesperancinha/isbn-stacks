@@ -35,3 +35,9 @@ dist
 
 # Python env
 __pycache__
+
+## Logs
+logs
+
+## Node
+node_modules
