@@ -41,3 +41,6 @@ logs
 
 ## Node
 node_modules
+
+## PID
+.attach*
