@@ -9,8 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>isbn-stacks-rest-traditional-mvc-reactive</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>ISBN Stacks - Spring WebFlux reactive application</name>
 
@@ -22,17 +20,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

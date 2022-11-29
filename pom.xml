@@ -31,7 +31,6 @@
         <kotest.version>5.5.4</kotest.version>
         <junit-jupiter-engine.version>5.9.1</junit-jupiter-engine.version>
         <spring-fu-kofu.version>0.5.1</spring-fu-kofu.version>
-        <spring.version>5.3.23</spring.version>
         <omni-coveragereporter-maven-plugin.version>0.3.0</omni-coveragereporter-maven-plugin.version>
     </properties>
 
@@ -39,6 +38,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-parent</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
             <dependency>
                 <groupId>org.jesperancinha.spring</groupId>
                 <artifactId>isbn-stacks-common</artifactId>
@@ -136,6 +142,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <jvmTarget>${java.version}</jvmTarget>
                     <compilerPlugins>
                         <plugin>no-arg</plugin>
                         <plugin>jpa</plugin>
