@@ -1,42 +1,38 @@
 version: "3.7"
 
 networks:
-  isbn_stacks:
-    driver: bridge
+  isbn-stacks:
 
 services:
 
   isbn-stacks-kofu:
     hostname: isbn-stacks-kofu
-    container_name: isbn-stacks-kofu
     build:
       context: isbn-stacks-rest-kofu-mvc-reactive/.
     ports:
       - "8080:8080"
     restart: on-failure
     networks:
-      - isbn_stacks
+      - isbn-stacks
 
   isbn-stacks-reactive:
     hostname: isbn-stacks-reactive
-    container_name: isbn-stacks-reactive
     build:
       context: isbn-stacks-rest-traditional-mvc-reactive/.
     ports:
       - "8081:8081"
     restart: on-failure
     networks:
-      - isbn_stacks
+      - isbn-stacks
 
   isbn-stacks-mvc:
     hostname: isbn-stacks-mvc
-    container_name: isbn-stacks-mvc
     build:
       context: isbn-stacks-rest-traditional-mvc-non-reactive/.
     ports:
       - "8082:8082"
     restart: on-failure
     networks:
-      - isbn_stacks
+      - isbn-stacks
 
 
