@@ -182,5 +182,3 @@ dcup-full-action: dcd docker-clean build-maven build-cypress dcup isbn-wait stat
 dcup-full-action-no-cypress: dcd docker-clean build-maven dcup isbn-wait
 status-containers:
 	docker ps
-	docker-compose -p ${GITHUB_RUN_ID} -f docker-compose.yml -f docker-compose-deck.yml logs kong
-	docker-compose -p ${GITHUB_RUN_ID} -f docker-compose.yml -f docker-compose-deck.yml logs kong-deck
