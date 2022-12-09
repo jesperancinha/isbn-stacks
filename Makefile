@@ -20,16 +20,16 @@ local: no-test
 no-test:
 	mvn clean install -DskipTests
 docker:
-	docker-compose up -d --build --remove-orphans
+	docker-compose -p ${GITHUB_RUN_ID} up -d --build --remove-orphans
 docker-databases: stop local
 build-images:
 build-docker: stop no-test
-	docker-compose up -d --build --remove-orphans
+	docker-compose -p ${GITHUB_RUN_ID} up -d --build --remove-orphans
 show:
 	docker ps -a  --format '{{.ID}} - {{.Names}} - {{.Status}}'
 docker-clean: stop
-	docker-compose down -v
-	docker-compose rm -svf
+	docker-compose -p ${GITHUB_RUN_ID} down -v
+	docker-compose -p ${GITHUB_RUN_ID} rm -svf
 docker-delete-idle:
 	docker ps --format '{{.ID}}' -q --filter="name=isbn_" | xargs docker rm
 docker-delete: stop
@@ -50,7 +50,7 @@ prune-all: stop
 	docker builder prune
 	docker system prune --all --volumes
 stop:
-	docker-compose down --remove-orphans
+	docker-compose -p ${GITHUB_RUN_ID} down --remove-orphans
 	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker stop {}
 	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker rm {}
 	docker ps -a -q --filter="name=jofisaes_isbn_stacks_kofu" | xargs -I {} docker stop {}
@@ -171,12 +171,12 @@ cypress-firefox:
 cypress-edge:
 	cd e2e && make cypress-edge
 dcd: stop docker-clean
-	docker-compose down
+	docker-compose -p ${GITHUB_RUN_ID} down
 local-pipeline: dcd docker-clean build-maven build-cypress test-maven
 isbn-wait:
 	bash isbn_wait.sh
 dcup: dcd
-	docker-compose up -d
+	docker-compose -p ${GITHUB_RUN_ID} up -d
 dcup-action: dcup isbn-wait
 dcup-full-action: dcd docker-clean build-maven build-cypress dcup isbn-wait status-containers
 dcup-full-action-no-cypress: dcd docker-clean build-maven dcup isbn-wait
