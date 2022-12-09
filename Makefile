@@ -52,12 +52,12 @@ prune-all: stop
 	docker system prune --all --volumes
 stop:
 	docker-compose -p ${GITHUB_RUN_ID} down --remove-orphans
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker stop {}
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_reactive" | xargs -I {} docker rm {}
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_kofu" | xargs -I {} docker stop {}
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_kofu" | xargs -I {} docker rm {}
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_mvc" | xargs -I {} docker stop {}
-	docker ps -a -q --filter="name=jofisaes_isbn_stacks_mvc" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_reactive" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_reactive" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_kofu" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_kofu" | xargs -I {} docker rm {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_mvc" | xargs -I {} docker stop {}
+	docker ps -a -q --filter="name=jofisaes_isbn-stacks_mvc" | xargs -I {} docker rm {}
 	docker ps -a -q --filter="name=isbn-stacks-reactive" | xargs -I {} docker stop {}
 	docker ps -a -q --filter="name=isbn-stacks-reactive" | xargs -I {} docker rm {}
 	docker ps -a -q --filter="name=isbn-stacks-kofu" | xargs -I {} docker stop {}
