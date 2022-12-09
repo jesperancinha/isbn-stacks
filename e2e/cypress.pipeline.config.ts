@@ -8,7 +8,6 @@ module.exports = defineConfig({
         includeShadowDom: true,
         video: false,
         screenshotOnRunFailure: false,
-        baseUrl: "http://isbn-stacks-kofu:8080",
         env: {
             'isbn-stacks-kofu': 'isbn-stacks-kofu',
             'isbn-stacks-reactive': 'isbn-stacks-reactive',
