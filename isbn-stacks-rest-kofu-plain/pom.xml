@@ -21,7 +21,6 @@
         <dependency>
             <groupId>org.springframework.fu</groupId>
             <artifactId>spring-fu-kofu</artifactId>
-            <version>${spring-fu-kofu.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
