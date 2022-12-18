@@ -57,6 +57,8 @@ This repo is also the official support repo to my article on medium:
 
 #### Stable releases
 
+- [1.0.0](https://github.com/jesperancinha/isbn-stacks/tree/1.0.0) - [d76ef9d6316e97210ff8a9759e7f1bc811ebc153](https://github.com/jesperancinha/isbn-stacks/tree/1.0.0) - Last working version before Spring 3.0.0
+
 ## Project Layout
 
 -   [ISBN Stacks - Common](./isbn-stacks-common) - The common library where the static source data resides
