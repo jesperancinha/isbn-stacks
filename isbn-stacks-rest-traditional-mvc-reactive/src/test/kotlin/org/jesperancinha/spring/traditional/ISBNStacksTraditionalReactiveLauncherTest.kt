@@ -1,5 +1,9 @@
 package org.jesperancinha.spring.traditional
 
-class ISBNStacksTraditionalReactiveLauncherTest {
+import org.junit.jupiter.api.Test
 
+class ISBNStacksTraditionalReactiveLauncherTest {
+    @Test
+    fun `should just check that unit tests start`() {
+    }
 }

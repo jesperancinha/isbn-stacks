@@ -55,6 +55,8 @@ This repo is also the official support repo to my article on medium:
       </a>
 </div>
 
+#### Stable releases
+
 ## Project Layout
 
 -   [ISBN Stacks - Common](./isbn-stacks-common) - The common library where the static source data resides
