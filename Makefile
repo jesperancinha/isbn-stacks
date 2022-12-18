@@ -5,7 +5,7 @@ b: build-maven
 build:
 	mvn clean install
 build-maven:
-	mvn clean install -Pdemo -DskipTests
+	mvn clean install -DskipTests
 build-cypress:
 	cd e2e && make build
 test:
