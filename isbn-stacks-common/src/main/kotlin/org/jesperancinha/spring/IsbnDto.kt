@@ -4,7 +4,7 @@ import kotlin.math.pow
 import kotlin.random.Random
 
 data class IsbnDto(
-    val Isbn: String
+    val isbn: String
 ) {
     companion object {
         val ISBNS =
