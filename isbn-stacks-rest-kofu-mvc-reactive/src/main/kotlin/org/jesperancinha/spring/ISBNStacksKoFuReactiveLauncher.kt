@@ -6,6 +6,7 @@ import org.springframework.fu.kofu.reactiveWebApplication
 import org.springframework.fu.kofu.webflux.webFlux
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
+import reactor.core.publisher.Mono
 
 val app = reactiveWebApplication {
     beans {
@@ -35,10 +36,10 @@ class ISBNSampleService {
 }
 
 class ISBNSampleHandler(private val isbnSampleService: ISBNSampleService) {
-    fun hello(request: ServerRequest) = ServerResponse.ok().bodyValue(isbnSampleService.generateMessage())
-    fun json(request: ServerRequest) = ServerResponse.ok().bodyValue(ISBNMessage(isbnSampleService.generateMessage()))
-    fun isbns(request: ServerRequest) = ServerResponse.ok().bodyValue(ISBNS)
-    fun smallIsbns(request: ServerRequest) = ServerResponse.ok().bodyValue(SMALL_ISBNS)
+    fun hello(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(isbnSampleService.generateMessage())
+    fun json(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(ISBNMessage(isbnSampleService.generateMessage()))
+    fun isbns(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(ISBNS)
+    fun smallIsbns(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(SMALL_ISBNS)
 }
 
 class ISBNStacksKoFuReactiveLauncher{
