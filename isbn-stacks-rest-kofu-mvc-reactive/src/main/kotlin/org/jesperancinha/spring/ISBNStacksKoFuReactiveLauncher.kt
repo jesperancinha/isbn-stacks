@@ -41,12 +41,8 @@ class ISBNSampleService {
 }
 
 class ISBNSampleHandler(private val isbnSampleService: ISBNSampleService) {
-    fun hello(request: ServerRequest): Mono<ServerResponse> =
-        ServerResponse.ok().bodyValue(isbnSampleService.generateMessage())
-
-    fun json(request: ServerRequest): Mono<ServerResponse> =
-        ServerResponse.ok().bodyValue(ISBNMessage(isbnSampleService.generateMessage()))
-
+    fun hello(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(isbnSampleService.generateMessage())
+    fun json(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(ISBNMessage(isbnSampleService.generateMessage()))
     fun isbns(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(ISBNS)
     fun smallIsbns(request: ServerRequest): Mono<ServerResponse> = ServerResponse.ok().bodyValue(SMALL_ISBNS)
 }
