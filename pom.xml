@@ -27,7 +27,7 @@
         <spring-boot.version>2.7.6</spring-boot.version>
         <spring-fu-kofu.version>0.5.1</spring-fu-kofu.version>
 
-        <kotlin.version>1.8.22</kotlin.version>
+        <kotlin.version>1.9.0</kotlin.version>
         <kotlin.code.style>official</kotlin.code.style>
         <kotest.version>5.6.2</kotest.version>
         <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
