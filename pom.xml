@@ -31,7 +31,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotest.version>5.7.2</kotest.version>
         <omni-coveragereporter-maven-plugin.version>0.4.3</omni-coveragereporter-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
     </properties>
 
     <packaging>pom</packaging>
