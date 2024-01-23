@@ -1,5 +1,14 @@
 # ISBN Stacks Log Book
 
+
+<ins>20240123</ins>
+
+Spring Ko Fu has no updates since:
+
+Blocked by: https://github.com/spring-projects-experimental/spring-fu/issues/392
+
+A decision has been made to replace project with Ktor.
+
 <ins>20221218</ins>
 
 Spring Fu does not currently support 3.0.0. As reported on issue https://github.com/spring-projects-experimental/spring-fu/issues/392, there is a chance it will not be supported at all.

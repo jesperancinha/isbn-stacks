@@ -34,15 +34,10 @@ Worldwide, the number ISBN 13 is used. It is a massive collection of numbers whi
 
 This repo is also the official support repo to my article on medium:
 
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/medium-20.png "ISBN Stacks — A look at a possible Spring Application implementation without annotations")](https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe) [ISBN Stacks — A look at a possible Spring Application implementation without annotations](https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe)
+[![](https://img.shields.io/badge/ISBN%20Stacks%20—%20A%20look%20at%20a%20possible%20Spring%20Application%20implementation%20without%20annotations-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe)
 
-<div align="center">
-      <a title="ISBN Stacks — A look at a possible Spring Application implementation without annotations" href="https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe">
-     <img 
-          src="./docs/images/article.isbns.banner.jpg"
-          style="width:100%;">
-      </a>
-</div>
+
+> Note that this project will soon be migrated to Ktor...
 
 #### Stable releases
 
