@@ -1,5 +1,10 @@
 # ISBN Stacks Log Book
 
+<ins>20240727</ins>
+
+Perhaps the decision has to be rollback because:
+
+- https://github.com/wakingrufus/spring-funk
 
 <ins>20240123</ins>
 
