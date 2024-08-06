@@ -171,7 +171,7 @@ cypress-firefox:
 	cd e2e && make cypress-firefox
 cypress-edge:
 	cd e2e && make cypress-edge
-dcd: stop docker-clean
+dcd: dc-migration stop docker-clean
 	docker-compose -p ${GITHUB_RUN_ID} down
 local-pipeline: dcd docker-clean build-maven build-cypress test-maven
 isbn-wait:
@@ -195,3 +195,5 @@ deps-plugins-update:
 deps-quick-update: deps-cypress-update deps-plugins-update
 accept-prs:
 	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/acceptPR.sh | bash
+dc-migration:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/setupDockerCompose.sh | bash
