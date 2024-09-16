@@ -171,7 +171,7 @@ cypress-firefox:
 	cd e2e && make cypress-firefox
 cypress-edge:
 	cd e2e && make cypress-edge
-dcd: stop docker-clean
+dcd: dc-migration stop docker-clean
 	docker-compose -p ${GITHUB_RUN_ID} down
 local-pipeline: dcd docker-clean build-maven build-cypress test-maven
 isbn-wait:
@@ -183,3 +183,17 @@ dcup-full-action: dcd docker-clean build-maven build-cypress dcup isbn-wait stat
 dcup-full-action-no-cypress: dcd docker-clean build-maven dcup isbn-wait
 status-containers:
 	docker ps
+revert-deps-cypress-update:
+	if [ -f  e2e/docker-composetmp.yml ]; then rm e2e/docker-composetmp.yml; fi
+	if [ -f  e2e/packagetmp.json ]; then rm e2e/packagetmp.json; fi
+	git checkout e2e/docker-compose.yml
+	git checkout e2e/package.json
+deps-cypress-update:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/cypressUpdateOne.sh | bash
+deps-plugins-update:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/pluginUpdatesOne.sh | bash -s -- $(PARAMS)
+deps-quick-update: deps-cypress-update deps-plugins-update
+accept-prs:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/acceptPR.sh | bash
+dc-migration:
+	curl -sL https://raw.githubusercontent.com/jesperancinha/project-signer/master/setupDockerCompose.sh | bash
