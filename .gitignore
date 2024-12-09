@@ -42,6 +42,7 @@ logs
 # NPM
 package-lock.json
 yarn.lock
+node_modules
 
 ## Automation
 cypressUpdateOne.sh
