@@ -1,9 +1,5 @@
 version: "3.7"
 
-networks:
-  isbn-stacks:
-    driver: bridge
-
 services:
 
   isbn-stacks-kofu:
