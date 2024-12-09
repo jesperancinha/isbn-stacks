@@ -1,8 +1,5 @@
 version: "3.7"
 
-networks:
-  isbn-stacks:
-
 services:
 
   isbn-stacks-kofu:
@@ -12,8 +9,6 @@ services:
     ports:
       - "8080:8080"
     restart: on-failure
-    networks:
-      - isbn-stacks
 
   isbn-stacks-reactive:
     hostname: isbn-stacks-reactive
@@ -22,8 +17,6 @@ services:
     ports:
       - "8081:8081"
     restart: on-failure
-    networks:
-      - isbn-stacks
 
   isbn-stacks-mvc:
     hostname: isbn-stacks-mvc
@@ -32,7 +25,4 @@ services:
     ports:
       - "8082:8082"
     restart: on-failure
-    networks:
-      - isbn-stacks
-
 
