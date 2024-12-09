@@ -5,8 +5,6 @@ services:
     command: "--browser electron --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
-    networks:
-      - isbn-stacks
 
   e2e-chrome:
     image: "cypress/included:13.16.1"
@@ -14,8 +12,6 @@ services:
     command: "--browser chrome --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
-    networks:
-      - isbn-stacks
 
   e2e-firefox:
     image: "cypress/included:13.16.1"
@@ -23,8 +19,6 @@ services:
     command: "--browser firefox --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
-    networks:
-      - isbn-stacks
 
   e2e-edge:
     image: "cypress/included:13.16.1"
@@ -32,5 +26,3 @@ services:
     command: "--browser edge --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
-    networks:
-      - isbn-stacks
