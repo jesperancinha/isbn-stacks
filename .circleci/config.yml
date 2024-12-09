@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
 
-      - run: apk add maven makefile
+      - run: apk add maven make
       - run: mvn clean install
 
       - save_cache:
