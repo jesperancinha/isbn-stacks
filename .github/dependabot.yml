@@ -4,6 +4,33 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "jakarta.servlet:jakarta.servlet-api"
+        versions: ["6.0.0"]
+    groups:
+      postgresql:
+        patterns:
+          - "*postgresql*"
+      maven:
+        patterns:
+          - "*maven*"
+      kotlin:
+        patterns:
+          - "*kotlin*"
+      spring:
+        patterns:
+          - "*spring*"
+      openrewrite:
+        patterns:
+          - "*openrewrite*"
+      jackson:
+        patterns:
+          - "*jackson*"
+          - "jackson*"
+      micrometer:
+        patterns:
+          - "*micrometer*"
+          - "micrometer*"
 
   - package-ecosystem: npm
     directory: "/e2e"
