@@ -22,7 +22,7 @@
         <java.target.version>17</java.target.version>
         <mave.compiler.source>${java.version}</mave.compiler.source>
         <maven.compiler.target>${java.target.version}</maven.compiler.target>
-        <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
+        <maven-failsafe-plugin.version>3.5.4</maven-failsafe-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
 
         <spring-boot.version>2.7.6</spring-boot.version>
