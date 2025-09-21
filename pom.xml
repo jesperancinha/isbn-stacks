@@ -18,7 +18,7 @@
     <name>ISBN Stacks - Parent file</name>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <java.target.version>17</java.target.version>
         <mave.compiler.source>${java.version}</mave.compiler.source>
         <maven.compiler.target>${java.target.version}</maven.compiler.target>
