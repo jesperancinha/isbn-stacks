@@ -1,27 +1,27 @@
 services:
   e2e-electron:
-    image: "cypress/included:15.4.0"
+    image: "cypress/included:15.5.0"
     working_dir: /e2e
     command: "--browser electron --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
 
   e2e-chrome:
-    image: "cypress/included:15.4.0"
+    image: "cypress/included:15.5.0"
     working_dir: /e2e
     command: "--browser chrome --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
 
   e2e-firefox:
-    image: "cypress/included:15.4.0"
+    image: "cypress/included:15.5.0"
     working_dir: /e2e
     command: "--browser firefox --config-file cypress.pipeline.config.ts"
     volumes:
       - ./e2e:/e2e
 
   e2e-edge:
-    image: "cypress/included:15.4.0"
+    image: "cypress/included:15.5.0"
     working_dir: /e2e
     command: "--browser edge --config-file cypress.pipeline.config.ts"
     volumes:
