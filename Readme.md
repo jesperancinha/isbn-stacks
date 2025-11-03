@@ -33,7 +33,7 @@ Worldwide, the number ISBN 13 is used. It is a massive collection of numbers whi
 
 This repo is also the official support repo to my article on [Dev.to](https://dev.to/):
 
-[![](https://img.shields.io/badge/ISBN%20Stacks%20—%20A%20look%20at%20a%20possible%20Spring%20Application%20implementation%20without%20annotations-12100E?style=for-the-badge&logo=dev.to&logoColor=white)]([https://dev.to/jofisaes/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-67l](https://dev.to/jofisaes/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-67l)
+[![](https://img.shields.io/badge/ISBN%20Stacks%20—%20A%20look%20at%20a%20possible%20Spring%20Application%20implementation%20without%20annotations-12100E?style=for-the-badge&logo=dev.to&logoColor=white)]([https://dev.to/jofisaes/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-67l](https://dev.to/jofisaes/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-67l))
 
 
 > Note that this project will soon be migrated to Ktor...
