@@ -31,9 +31,9 @@ Please check the [TechStack.md](TechStack.md) file for details.
 
 Worldwide, the number ISBN 13 is used. It is a massive collection of numbers which uniquely identify books per type and edition. Based on that, this project is here to evaluate the recent experimental project from the spring team called Spring-FU. A DSL that, when released, it will allow Spring applications to be developed without the use of annotations. The main argument is that annotations bring unnecessary overhead to the application and that processing time can be avoided. The Spring-FU projecct started in GitHub on the 31st of  May 2018.
 
-This repo is also the official support repo to my article on medium:
+This repo is also the official support repo to my article on [Dev.to](https://dev.to/):
 
-[![](https://img.shields.io/badge/ISBN%20Stacks%20—%20A%20look%20at%20a%20possible%20Spring%20Application%20implementation%20without%20annotations-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe)
+[![](https://img.shields.io/badge/ISBN%20Stacks%20—%20A%20look%20at%20a%20possible%20Spring%20Application%20implementation%20without%20annotations-12100E?style=for-the-badge&logo=dev.to&logoColor=white)]([https://itnext.io/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-ca1528591fe](https://dev.to/jofisaes/isbn-stacks-a-look-at-a-possible-spring-application-implementation-without-annotations-67l)
 
 
 > Note that this project will soon be migrated to Ktor...
